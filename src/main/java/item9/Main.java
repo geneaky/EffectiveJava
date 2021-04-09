@@ -12,6 +12,7 @@ public class Main {
     static void copy(String src, String dst) throws IOException{
         try(InputStream in = new FileInputStream(src);
             OutputStream out = new FileOutputStream(dst)){
+            int BUFFER_SIZE = 100;
             byte[] buf = new byte[BUFFER_SIZE];
             int n;
             while((n = in.read(buf))>=0)

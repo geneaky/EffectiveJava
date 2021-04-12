@@ -10,8 +10,7 @@ public class Main {
         System.out.println("areaCode2 = " + areaCode2);
         //toString의 좋은예 왠만하면 그냥 ide에서 제공하는 기능으로 재정의하면됨(객체의 주요 정보 모두 반환해주기때문에)
 
-
-        AreaCode3 areaCode3 = new AreaCode3("대구","053");
+        AreaCode3 areaCode3 = new AreaCode3("대구","031");
         System.out.println("areaCode3 = " + areaCode3);
         //만약 해당 클래스의 필드에 컬렉션이나 기타 표기해야할 정보가 많을경우 자체적으로 포매팅 형식을 취해서 표기해주는 것이 좋다.
     }

@@ -28,15 +28,32 @@ public class Main {
         Teacher teacher = new Teacher();
         Student student = new Student();
         System.out.println("student.clone().equals(student) = " + student.clone().equals(student));
-        System.out.println("student==student.clone() = " + student==student.clone());
+        System.out.println("student==student.clone() = " + (student==student.clone()));
 
-        System.out.println("teacher==teacher.clone() = " + teacher==teacher.clone());
+        System.out.println("teacher==teacher.clone() = " + (teacher==teacher.clone()));
         System.out.println("teacher.equals(teacher.clone()) = " + teacher.equals(teacher.clone()));
         teacher.studentList = new ArrayList<>();
         teacher.studentList.add(student);
         System.out.println("teacher.studentList==((Teacher)teacher.clone().studentList = " +
                 teacher.studentList.equals(((Teacher)teacher.clone()).studentList));
         //분명 다른 객체인데 studentList는 논리적으로 동치
+
+        Teacher otherTeacher = (Teacher) teacher.clone();
+
+        otherTeacher.studentList.add(new Student());
+
+        System.out.println("otherTeacher.studentList == teacher.studentList = " + (otherTeacher.studentList == teacher.studentList));
+        System.out.println("otherTeacher.studentList.equals(teacher.studentList) = " + otherTeacher.studentList.equals(teacher.studentList));
+        
+        
+        Teacher constructorTeacher = new Teacher();
+        constructorTeacher.name = "teacher";
+        constructorTeacher.age = 24;
+        constructorTeacher.studentList.add(new Student());
+        Teacher otherConstructorTeacher = new Teacher(constructorTeacher);
+
+        System.out.println("otherConstructorTeacher.studentList == constructorTeacher.studentList = " + (otherConstructorTeacher.studentList == constructorTeacher.studentList));
+        System.out.println("otherConstructorTeacher.studentList.equals(constructorTeacher.studentList) = " + otherConstructorTeacher.studentList.equals(constructorTeacher.studentList));
 
     }
 }

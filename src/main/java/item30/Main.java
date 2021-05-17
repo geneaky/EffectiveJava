@@ -16,10 +16,8 @@ public class Main {
 
         System.out.println(union(s1,s2));
         System.out.println(union2(s1,s2));
-
         System.out.println(union(s1,s3));
 //        System.out.println(union2(s1,s3));
-
 
     }
 
